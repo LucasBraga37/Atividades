@@ -1,0 +1,42 @@
+using System;
+
+namespace MediaSalarioPopulacao
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double salarioTotal = 0.0;
+            int contador = 0;
+
+            Console.WriteLine("Digite os dados dos habitantes (digite '0' para sair):");
+
+            while (true)
+            {
+                Console.Write("Salário: ");
+                double salario = double.Parse(Console.ReadLine());
+
+                if (salario == 0.0)
+                {
+                    break; // interrompe um laço enfinito caso o usuário digite 0
+                }
+
+                Console.Write("Número de filhos: ");
+                int numFilhos = int.Parse(Console.ReadLine());
+
+                salarioTotal += salario;
+                contador++;
+            }
+
+            if (contador > 0)
+            {
+                double mediaSalario = salarioTotal / contador;
+                Console.WriteLine($"Média de salário da população: {mediaSalario:F2}");
+            }
+            else
+            {
+                Console.WriteLine("Nenhum dado foi informado!");
+            }
+        }
+    }
+}
