@@ -1,0 +1,30 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        int num1, num2;
+
+        Console.Write("Digite o primeiro número inteiro: ");
+        num1 = int.Parse(Console.ReadLine());
+
+        Console.Write("Digite o segundo número inteiro: ");
+        num2 = int.Parse(Console.ReadLine());
+
+        int mdc = CalculaMDC(num1, num2);
+        Console.WriteLine("O MDC de " + num1 + " e " + num2 + " é: " + mdc);
+    }
+
+    public static int CalculaMDC(int a, int b)
+    {
+        if (b == 0)
+        {
+            return a;
+        }
+        else
+        {
+            return CalculaMDC(b, a % b);
+        }
+    }
+}
