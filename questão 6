@@ -1,0 +1,29 @@
+using System;
+
+class Program {
+    static bool VerificaPositivo(int n) {
+        if (n >= 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    static void Main(string[] args) {
+        Console.Write("Quantos números deseja verificar? ");
+        int n = int.Parse(Console.ReadLine());
+
+        for (int i = 0; i < n; i++) {
+            Console.Write("Digite um número: ");
+            int numero = int.Parse(Console.ReadLine());
+
+            bool resultado = VerificaPositivo(numero);
+
+            if (resultado == true) {
+                Console.WriteLine("O número é positivo.");
+            } else {
+                Console.WriteLine("O número é negativo.");
+            }
+        }
+    }
+}
