@@ -1,0 +1,44 @@
+static void VerificaTriangulo(double x, double y, double z)
+{
+    if (x < y + z && y < x + z && z < x + y) // verifica se forma um triângulo
+    {
+        if (x == y && y == z)
+        {
+            Console.WriteLine($"Os valores {x}, {y} e {z} formam um triângulo equilátero.");
+        }
+        else if (x == y || x == z || y == z)
+        {
+            Console.WriteLine($"Os valores {x}, {y} e {z} formam um triângulo isósceles.");
+        }
+        else
+            Console.WriteLine($"Os valores {x}, {y} e {z} formam um triângulo escaleno.");
+        }
+    }
+    else
+    {
+        Console.WriteLine($"Os valores {x}, {y} e {z} não formam um triângulo.")
+    }
+}
+//Primeira Parte 
+
+static void Main(string[] args)
+{
+    while (true)
+    {
+        Console.Write("Digite os valores dos lados do triângulo separados por espaço (ou digite 'sair' para encerrar): ");
+        string input = Console.ReadLine();
+
+        if (input.ToLower() == "sair")
+        {
+            break; // encerra o programa se o usuário digitar "sair"
+        }
+
+        string[] valores = input.Split();
+        double x = double.Parse(valores[0]);
+        double y = double.Parse(valores[1]);
+        double z = double.Parse(valores[2]);
+
+        VerificaTriangulo(x, y, z); // aciona o procedimento para os valores lidos
+    }
+}
+//Segunda Parte 
