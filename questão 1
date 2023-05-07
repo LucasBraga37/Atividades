@@ -1,0 +1,44 @@
+using System;
+
+namespace MediaNotasAlunos
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n; // quantidade de alunos
+            Console.Write("Digite a quantidade de alunos: ");
+            n = int.Parse(Console.ReadLine());
+
+            for (int i = 1; i <= n; i++)
+            {
+                double nota1, nota2, nota3;
+                Console.WriteLine($"Aluno {i}");
+                Console.Write("Digite a primeira nota: ");
+                nota1 = double.Parse(Console.ReadLine());
+                Console.Write("Digite a segunda nota: ");
+                nota2 = double.Parse(Console.ReadLine());
+                Console.Write("Digite a terceira nota: ");
+                nota3 = double.Parse(Console.ReadLine());
+
+                Console.Write("Digite A para média aritmética ou P para média ponderada: ");
+                char opcao = char.Parse(Console.ReadLine());
+
+                if (opcao == 'A')
+                {
+                    double media = (nota1 + nota2 + nota3) / 3.0;
+                    Console.WriteLine($"Média aritmética: {media:F2}");
+                }
+                else if (opcao == 'P')
+                {
+                    double media = (nota1 * 5.0 + nota2 * 3.0 + nota3 * 2.0) / 10.0;
+                    Console.WriteLine($"Média ponderada: {media:F2}");
+                }
+                else
+                {
+                    Console.WriteLine("Opção inválida!");
+                }
+            }
+        }
+    }
+}
