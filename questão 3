@@ -1,0 +1,54 @@
+using System;
+
+namespace OrdenarValores
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n;
+            Console.Write("Digite a quantidade de conjuntos de 3 valores a serem ordenados: ");
+            n = int.Parse(Console.ReadLine());
+
+            for (int i = 1; i <= n; i++)
+            {
+                int a, b, c;
+                Console.WriteLine($"Conjunto {i}");
+                Console.Write("Digite o primeiro valor: ");
+                a = int.Parse(Console.ReadLine());
+                Console.Write("Digite o segundo valor: ");
+                b = int.Parse(Console.ReadLine());
+                Console.Write("Digite o terceiro valor: ");
+                c = int.Parse(Console.ReadLine());
+
+                Ordenar(ref a, ref b, ref c);
+
+                Console.WriteLine($"Valores ordenados: {a}, {b}, {c}");
+                Console.WriteLine(); 
+            }
+        }
+
+        static void Ordenar(ref int x, ref int y, ref int z)
+        {
+            int temp;
+            if (x > y)
+            {
+                temp = x;
+                x = y;
+                y = temp;
+            }
+            if (x > z)
+            {
+                temp = x;
+                x = z;
+                z = temp;
+            }
+            if (y > z)
+            {
+                temp = y;
+                y = z;
+                z = temp;
+            }
+        }
+    }
+}
