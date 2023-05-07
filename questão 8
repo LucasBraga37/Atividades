@@ -1,0 +1,29 @@
+using System;
+
+public class Program
+{
+    public static double CalculaS(int N)
+    {
+        double S = 0;
+        int numerador = 2;
+        int denominador = 4;
+        
+        for (int i = 1; i <= N; i++)
+        {
+            S += (double)(numerador) / denominador;
+            numerador += i * 2 + 1;
+            denominador++;
+        }
+        
+        return S;
+    }
+    public static void Main()
+    {
+        Console.Write("Digite o valor de N: ");
+        int N = int.Parse(Console.ReadLine());
+        
+        double resultado = CalculaS(N);
+        
+        Console.WriteLine($"O resultado de S para N = {N} é: {resultado}");
+    }
+}
