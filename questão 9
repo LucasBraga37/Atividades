@@ -1,0 +1,36 @@
+using System;
+
+public class Program {
+    
+    public static double CalcularMediaAprovados(int numAlunos) {
+        double somaNotas = 0;
+        int numAprovados = 0;
+        
+        for (int i = 1; i <= numAlunos; i++) {
+            Console.Write($"Informe a nota do aluno {i}: ");
+            double nota = double.Parse(Console.ReadLine());
+            
+            if (nota >= 6) {
+                somaNotas += nota;
+                numAprovados++;
+            }
+        }
+        
+        if (numAprovados == 0) {
+            Console.WriteLine("Nenhum aluno aprovado.");
+            return 0;
+        }
+        else {
+            double mediaAprovados = somaNotas / numAprovados;
+            Console.WriteLine($"Média das notas dos alunos aprovados: {mediaAprovados:F2}");
+            return mediaAprovados;
+        }
+    }
+    
+    public static void Main() {
+        Console.Write("Informe o número de alunos: ");
+        int numAlunos = int.Parse(Console.ReadLine());
+        
+        double mediaAprovados = CalcularMediaAprovados(numAlunos);
+    }
+}
